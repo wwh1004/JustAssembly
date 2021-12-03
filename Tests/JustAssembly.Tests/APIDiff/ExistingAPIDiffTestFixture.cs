@@ -1,18 +1,18 @@
 ﻿using System;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AssemblyDiffTests.APIDiff
 {
-    [TestFixture]
+    [TestClass]
     class ExistingAPIDiffTestFixture : BaseExistingAPIDiffTestFixture
     {
-        [TestCase]
+        [TestMethod]
         public void SimpleAPIDiffTest()
         {
             RunTestCase("SimpleAPIDIffTest");
         }
 
-        [TestCase]
+        [TestMethod]
         public void VariousAPIDiffsTest()
         {
             RunTestCase("VariousAPIDiffsTest");

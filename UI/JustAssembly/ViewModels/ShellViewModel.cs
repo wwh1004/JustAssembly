@@ -88,8 +88,6 @@ namespace JustAssembly.ViewModels
 
             if (newSessionDialog.ShowDialog() == true)
             {
-                Configuration.Analytics.TrackFeature("DiffSessionType." + newSessionViewModel.SelectedSession.SelectedItemType.ToString());
-
                 this.OnLoadCommandExecuted(newSessionViewModel.SelectedSession);
             }
         }
@@ -104,7 +102,6 @@ namespace JustAssembly.ViewModels
             else
             {
                 AssembliesComparisonViewModel newAssembliesComparisonViewModel = new AssembliesComparisonViewModel(args);
-                Configuration.Analytics.TrackFeature("CommandLineParameters.NewFileSessionFiles");
                 this.OnLoadCommandExecuted(newAssembliesComparisonViewModel);
             }
         }
@@ -131,7 +128,6 @@ namespace JustAssembly.ViewModels
 
             if (!isValid && showErrorMessageBoxIfPresentButInvalid)
             {
-                Configuration.Analytics.TrackFeature("CommandLineParameters.InvalidArgsDialogShown");
                 ToolWindow.ShowDialog(
                     new ErrorMessageWindow(
                         $"Invalid path arguments.\nPath1: \"{left ?? "NULL"}\"\nPath2: \"{right ?? "NULL"}\"",

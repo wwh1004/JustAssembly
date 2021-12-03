@@ -1,5 +1,4 @@
-﻿using JustAssembly.API.Analytics;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -11,8 +10,6 @@ namespace JustAssembly
     static class Configuration
     {
         private const string AppDirectoryName = "JustAssembly";
-
-        public static IAnalyticsService Analytics { get; set; }
 
         public static string GetApplicationTempFolder
         {

@@ -16,14 +16,14 @@ namespace JustAssembly.Infrastructure.CodeViewer
 
         public ICodeViewerResults SourceCode { get; set; }
 
-        protected override string GetLineNumberAsString(VisualLine line)
-        {
-            if (this.SourceCode == null)
-            {
-                return line.FirstDocumentLine.LineNumber.ToString(CultureInfo.CurrentCulture);
-            }
+        //protected override string GetLineNumberAsString(VisualLine line)
+        //{
+        //    if (this.SourceCode == null)
+        //    {
+        //        return line.FirstDocumentLine.LineNumber.ToString(CultureInfo.CurrentCulture);
+        //    }
 
-            return this.SourceCode.GetLineNumberString(line.FirstDocumentLine.LineNumber - 1);
-        }
+        //    return this.SourceCode.GetLineNumberString(line.FirstDocumentLine.LineNumber - 1);
+        //}
     }
 }

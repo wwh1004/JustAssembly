@@ -9,16 +9,7 @@
         {
             DangerousResourceDialogResult dialogResult = base.Show();
 
-            this.TrackDangerousResourceDecompilationUserChoice(dialogResult);
-
             return dialogResult;
-        }
-
-        private void TrackDangerousResourceDecompilationUserChoice(DangerousResourceDialogResult dialogResult)
-        {
-            string featureToReport = "DangerousResourcesDecompilationDialogResult" + '.' + dialogResult.ToString();
-
-            Configuration.Analytics.TrackFeature(featureToReport);
         }
     }
 }

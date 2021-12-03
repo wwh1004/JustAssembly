@@ -232,10 +232,10 @@ namespace JustAssembly.Views
             }
         }
 
-        protected override LineNumberMargin GetLineNumberMargin()
-        {
-            return this.lineNumberMargin;
-        }
+        //protected override LineNumberMargin GetLineNumberMargin()
+        //{
+        //    return this.lineNumberMargin;
+        //}
 
         private void UpdateVisibleLines()
         {

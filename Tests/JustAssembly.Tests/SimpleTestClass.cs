@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mono.Cecil;
-using NUnit.Framework;
 
 namespace JustAssembly.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class SimpleTestClass
     {
-        [TestCase]
+        [TestMethod]
         public void SimpleMonoCecilTest()
         {
             AssemblyDefinition thisAssembly = AssemblyDefinition.ReadAssembly("JustAssembly.Tests.dll", new ReaderParameters(GlobalAssemblyResolver.Instance));

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using JustAssembly.Core;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AssemblyDiffTests.APIDiff
 {

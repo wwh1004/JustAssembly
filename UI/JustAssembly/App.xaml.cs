@@ -3,7 +3,6 @@ using System.Text;
 using System.Windows;
 using System.Windows.Threading;
 using JustAssembly.MergeUtilities;
-using JustAssembly.Infrastructure.Analytics;
 
 namespace JustAssembly
 {
@@ -13,10 +12,6 @@ namespace JustAssembly
 
         public App()
         {
-            Configuration.Analytics = AnalyticsServiceImporter.Instance.Import();
-            
-            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
-
             AssemblyHelper.ErrorReadingAssembly += OnErrorReadingAssembly;
         }
         
@@ -43,18 +38,8 @@ namespace JustAssembly
         {
             args = e.Args;
             base.OnStartup(e);
-            
-            Configuration.Analytics.Start();
-            Configuration.Analytics.TrackFeature("Mode.UI");
-            
-            this.OnShellRun();
-        }
 
-        protected override void OnExit(ExitEventArgs e)
-        {
-            base.OnExit(e);
-            
-            Configuration.Analytics.Stop();
+            this.OnShellRun();
         }
 
         private void OnShellRun()
@@ -62,12 +47,6 @@ namespace JustAssembly
             var bootstrapper = new JustAssemblyBootstrapper(args);
 
             bootstrapper.Run();
-        }
-
-        private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
-        {
-            Configuration.Analytics.TrackException(e.ExceptionObject as Exception);
-            Configuration.Analytics.Stop();
         }
     }
 }

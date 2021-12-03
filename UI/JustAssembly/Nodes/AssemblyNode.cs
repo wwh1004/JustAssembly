@@ -165,8 +165,6 @@ namespace JustAssembly.Nodes
 
 						GlobalDecompilationResultsRepository.Instance.AddDecompilationResult(TypesMap.OldType, r1);
 
-                        TrackFrameworkVersionAndAssemblyType(TypesMap.OldType);
-
 						assemblyNumber++;
 					}
 					if (TypesMap.NewType != null && !GlobalDecompilationResultsRepository.Instance.ContainsAssembly(TypesMap.NewType))
@@ -188,8 +186,6 @@ namespace JustAssembly.Nodes
 						cancellationToken.ThrowIfCancellationRequested();
 
                         GlobalDecompilationResultsRepository.Instance.AddDecompilationResult(TypesMap.NewType, r2);
-
-                        TrackFrameworkVersionAndAssemblyType(TypesMap.NewType);
 					}
 					List<SharpTreeNode> moduleNodes = this.GetMergedModules(true).ToList();
 
@@ -378,8 +374,6 @@ namespace JustAssembly.Nodes
                 if (assemblyDefinition != null)
                 {
                     AssemblyInfo assemblyInfo = NoCacheAssemblyInfoService.Instance.GetAssemblyInfo(assemblyDefinition, EmptyResolver.Instance);
-                    Configuration.Analytics.TrackFeature("LoadedAssemblyFrameworkVersion." + assemblyInfo.ModulesFrameworkVersions[assemblyDefinition.MainModule].ToString());
-                    Configuration.Analytics.TrackFeature("LoadedAssemblyType." + assemblyInfo.AssemblyTypes.ToString().Replace(", ", "_"));
                 }
             }
             catch (Exception) { }
