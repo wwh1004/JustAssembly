@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JustAssembly.Extensions;
 using JustAssembly.Interfaces;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.MergeUtilities
 {

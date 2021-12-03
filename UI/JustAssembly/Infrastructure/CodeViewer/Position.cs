@@ -1,4 +1,4 @@
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using JustAssembly.Infrastructure.CodeViewer;
 
 namespace JustAssembly

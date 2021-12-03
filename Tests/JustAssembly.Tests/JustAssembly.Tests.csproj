@@ -70,10 +70,6 @@
       <Project>{c83612cd-ad42-4655-98a1-336ce7a65012}</Project>
       <Name>JustAssembly.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\Mono.Cecil\Mono.Cecil.csproj">
-      <Project>{d68133bd-1e63-496e-9ede-4fbdbf77b486}</Project>
-      <Name>Mono.Cecil</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -6,7 +6,7 @@ using System.Windows.Threading;
 using JustAssembly.Interfaces;
 using JustAssembly.MergeUtilities;
 using JustAssembly.Nodes.APIDiff;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.Nodes
 {

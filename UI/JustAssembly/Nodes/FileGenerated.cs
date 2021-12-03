@@ -1,4 +1,4 @@
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.Nodes
 {

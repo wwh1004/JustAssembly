@@ -2,7 +2,7 @@
 using System.Linq;
 using JustAssembly.Interfaces;
 using JustAssembly.Nodes.APIDiff;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.Nodes
 {

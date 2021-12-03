@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JustAssembly.Extensions;
 using JustAssembly.Core.DiffAlgorithm.Models;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using System.Windows.Media;
 using ICSharpCode.AvalonEdit.Rendering;
 using System.Globalization;

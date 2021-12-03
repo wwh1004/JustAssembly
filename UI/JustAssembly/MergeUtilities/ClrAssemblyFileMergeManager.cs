@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using JustAssembly.Extensions;
 using JustAssembly.Interfaces;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.MergeUtilities
 {

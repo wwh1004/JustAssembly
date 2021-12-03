@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using JustAssembly.Interfaces;
 using JustAssembly.Nodes.APIDiff;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.Nodes
 {

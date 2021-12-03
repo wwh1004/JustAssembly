@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using Prism.Mvvm;
 
 namespace JustAssembly.Interfaces

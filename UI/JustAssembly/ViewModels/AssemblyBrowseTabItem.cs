@@ -5,7 +5,7 @@ using JustAssembly.Interfaces;
 using JustAssembly.MergeUtilities;
 using JustAssembly.Nodes;
 using JustAssembly.Nodes.APIDiff;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 namespace JustAssembly.ViewModels
 {

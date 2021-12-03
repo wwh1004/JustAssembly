@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using Mono.Cecil;
 
 namespace JustAssembly.Core.Extensions

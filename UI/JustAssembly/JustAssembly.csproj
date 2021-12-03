@@ -263,22 +263,6 @@
       <Project>{c83612cd-ad42-4655-98a1-336ce7a65012}</Project>
       <Name>JustAssembly.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\MSBuildProjectCreator\Tools.MSBuildProjectBuilder.csproj">
-      <Project>{f7bbb403-7142-4f8d-8e65-5aba94502d3d}</Project>
-      <Name>Tools.MSBuildProjectBuilder</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\Cecil.Decompiler\JustDecompiler.csproj">
-      <Project>{ed1be103-1699-4116-a732-616beb142eb2}</Project>
-      <Name>JustDecompiler</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\JustDecompile.External.JustAssembly\JustDecompile.External.JustAssembly.csproj">
-      <Project>{b97b9235-c5a9-4f00-aa22-d7e88fbbb4f0}</Project>
-      <Name>JustDecompile.External.JustAssembly</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\Mono.Cecil\Mono.Cecil.csproj">
-      <Project>{d68133bd-1e63-496e-9ede-4fbdbf77b486}</Project>
-      <Name>Mono.Cecil</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\error_big.png" />

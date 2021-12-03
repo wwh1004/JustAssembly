@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using JustAssembly.Interfaces;
 using JustAssembly.MergeUtilities;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using System.Windows.Threading;
 
 namespace JustAssembly.Nodes

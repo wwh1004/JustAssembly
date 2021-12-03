@@ -1,6 +1,6 @@
 using System;
 using JustAssembly.Infrastructure.CodeViewer;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 using JustAssembly.Nodes;
 
 namespace JustAssembly.ViewModels

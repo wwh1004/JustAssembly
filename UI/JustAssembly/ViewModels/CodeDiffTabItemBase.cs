@@ -140,7 +140,7 @@ namespace JustAssembly.ViewModels
             this.RaisePropertyChanged("RightSourceCode");
         }
 
-        public override void OnProjectFileGenerated(JustDecompile.External.JustAssembly.IFileGeneratedInfo args)
+        public override void OnProjectFileGenerated(JustAssembly.Core.Decompilation.IFileGeneratedInfo args)
         {
 
         }

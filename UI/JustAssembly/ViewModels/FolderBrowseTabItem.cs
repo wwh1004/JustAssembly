@@ -41,7 +41,7 @@ namespace JustAssembly.ViewModels
             this.CancelProgress();
         }
 
-        public override void OnProjectFileGenerated(JustDecompile.External.JustAssembly.IFileGeneratedInfo args)
+        public override void OnProjectFileGenerated(JustAssembly.Core.Decompilation.IFileGeneratedInfo args)
         {
             this.Progress = this.progress + 1;
         }

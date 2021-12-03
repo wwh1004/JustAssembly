@@ -11,7 +11,7 @@ using ICSharpCode.TreeView;
 using Mono.Cecil;
 //using JustDecompile.EngineInfrastructure;
 //using JustDecompile.Tools.MSBuildProjectBuilder;
-using JustDecompile.External.JustAssembly;
+using JustAssembly.Core.Decompilation;
 
 using JustAssembly.Interfaces;
 using JustAssembly.MergeUtilities;
