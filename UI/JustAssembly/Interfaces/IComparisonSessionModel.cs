@@ -1,4 +1,4 @@
-using JustAssembly.SelectorControl;
+using JustAssembly.Controls;
 
 namespace JustAssembly.Interfaces
 {

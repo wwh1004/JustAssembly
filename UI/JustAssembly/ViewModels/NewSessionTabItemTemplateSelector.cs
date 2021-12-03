@@ -1,7 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using JustAssembly.Interfaces;
-using JustAssembly.SelectorControl;
+using JustAssembly.Controls;
 
 namespace JustAssembly.ViewModels
 {

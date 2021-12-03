@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.Prism.ViewModel;
+using Prism.Mvvm;
 
 namespace JustAssembly.Infrastructure
 {
-    class JustAssemblyViewModel : NotificationObject
+    class JustAssemblyViewModel : BindableBase
     {
         private string selectedJustAssembly;
 

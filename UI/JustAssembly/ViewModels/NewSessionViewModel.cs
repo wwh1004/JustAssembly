@@ -2,12 +2,12 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using JustAssembly.Interfaces;
-using Microsoft.Practices.Prism.ViewModel;
+using Prism.Mvvm;
 using System.Collections.ObjectModel;
 
 namespace JustAssembly.ViewModels
 {
-    class NewSessionViewModel : NotificationObject
+    class NewSessionViewModel : BindableBase
     {
         private IComparisonSessionModel selectedSession;
 

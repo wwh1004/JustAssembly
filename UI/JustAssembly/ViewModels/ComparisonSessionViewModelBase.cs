@@ -1,12 +1,12 @@
 using System.Windows.Input;
 using JustAssembly.Interfaces;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.ViewModel;
-using JustAssembly.SelectorControl;
+using Prism.Commands;
+using Prism.Mvvm;
+using JustAssembly.Controls;
 
 namespace JustAssembly.ViewModels
 {
-    abstract class ComparisonSessionViewModelBase : NotificationObject, IOldToNewTupleMap<string>, IComparisonSessionModel
+    abstract class ComparisonSessionViewModelBase : BindableBase, IOldToNewTupleMap<string>, IComparisonSessionModel
     {
         private string oldPath;
         private string newPath;

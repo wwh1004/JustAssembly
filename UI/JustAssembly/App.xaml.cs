@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Threading;
 using JustAssembly.MergeUtilities;
+using JustAssembly.ViewModels;
 
 namespace JustAssembly
 {
@@ -44,9 +45,8 @@ namespace JustAssembly
 
         private void OnShellRun()
         {
-            var bootstrapper = new JustAssemblyBootstrapper(args);
-
-            bootstrapper.Run();
+            Shell shell = new Shell(new ShellViewModel(args), args);
+            shell.Show();
         }
     }
 }

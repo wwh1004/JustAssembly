@@ -1,4 +1,4 @@
-﻿namespace JustAssembly.SelectorControl
+﻿namespace JustAssembly.Controls
 {
     public enum SelectedItemType
     {

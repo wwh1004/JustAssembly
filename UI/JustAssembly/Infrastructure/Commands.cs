@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.Practices.Prism.Commands;
+using Prism.Commands;
 
 namespace JustAssembly.Infrastructure
 {

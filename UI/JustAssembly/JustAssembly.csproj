@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JustAssembly</RootNamespace>
     <AssemblyName>JustAssembly</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -65,11 +65,8 @@
     <Reference Include="ICSharpCode.TreeView">
       <HintPath>..\..\Binaries\ICSharpCode.TreeView.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Prism">
-      <HintPath>..\..\Binaries\Microsoft.Practices.Prism.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
-      <HintPath>..\..\Binaries\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -101,6 +98,8 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Controls\SelectedItemType.cs" />
+    <Compile Include="Controls\SelectorControl.cs" />
     <Compile Include="Dialogs\DangerousResource\AssemblyType.cs" />
     <Compile Include="Dialogs\DangerousResource\DangerousResourceDialog.cs" />
     <Compile Include="Dialogs\DangerousResource\DangerousResourceDialogResult.cs" />
@@ -195,6 +194,10 @@
     <Compile Include="Views\SideSummary.xaml.cs">
       <DependentUpon>SideSummary.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\SelectorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\ErrorMessageWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -202,6 +205,10 @@
     <Page Include="Dialogs\NewSessionDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Shell.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -211,11 +218,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CallbackLogger.cs" />
     <Compile Include="Dialogs\NewSessionDialog.xaml.cs">
       <DependentUpon>NewSessionDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="JustAssemblyBootstrapper.cs" />
     <Compile Include="ViewModels\XamlDiffTabItem.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
@@ -258,10 +263,6 @@
       <Project>{c83612cd-ad42-4655-98a1-336ce7a65012}</Project>
       <Name>JustAssembly.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\JustAssembly.DiffAlgorithm\JustAssembly.DiffAlgorithm.csproj">
-      <Project>{529ed979-2760-4808-b609-1cbe6506fb97}</Project>
-      <Name>JustAssembly.DiffAlgorithm</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\JustDecompileEngine\MSBuildProjectCreator\Tools.MSBuildProjectBuilder.csproj">
       <Project>{f7bbb403-7142-4f8d-8e65-5aba94502d3d}</Project>
       <Name>Tools.MSBuildProjectBuilder</Name>
@@ -282,10 +283,6 @@
       <Project>{d68133bd-1e63-496e-9ede-4fbdbf77b486}</Project>
       <Name>Mono.Cecil</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JustAssembly.SelectorControl\JustAssembly.SelectorControl.csproj">
-      <Project>{4498e5b1-75c7-41cd-85d5-05bb6764f37f}</Project>
-      <Name>JustAssembly.SelectorControl</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Common\error_big.png" />
@@ -305,9 +302,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\TreeView\Resources.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\DefaultBanner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

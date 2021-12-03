@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Threading;
 using JustDecompile.External.JustAssembly;
-using Microsoft.Practices.Prism.ViewModel;
+using Prism.Mvvm;
 
 namespace JustAssembly.Interfaces
 {
-    abstract class TabSourceItemBase : NotificationObject, ITabSourceItem
+    abstract class TabSourceItemBase : BindableBase, ITabSourceItem
     {
         private bool isBusy;
 

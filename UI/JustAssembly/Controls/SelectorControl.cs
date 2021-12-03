@@ -1,9 +1,9 @@
-﻿using Microsoft.Practices.Prism.Commands;
+﻿using Prism.Commands;
 using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Input;
 
-namespace JustAssembly.SelectorControl
+namespace JustAssembly.Controls
 {
 	public partial class SelectorControl : System.Windows.Controls.Control
     {

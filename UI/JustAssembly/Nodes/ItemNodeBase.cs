@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using JustAssembly.Interfaces;
 using JustAssembly.Nodes.APIDiff;
-using Microsoft.Practices.Prism.ViewModel;
+using Prism.Mvvm;
 using ICSharpCode.TreeView;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;

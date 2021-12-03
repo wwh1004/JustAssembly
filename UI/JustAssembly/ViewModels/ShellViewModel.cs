@@ -8,14 +8,14 @@ using System.Windows.Input;
 using JustAssembly.Infrastructure;
 using JustAssembly.Interfaces;
 using JustAssembly.Nodes;
-using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.ViewModel;
+using Prism.Commands;
+using Prism.Mvvm;
 
 namespace JustAssembly.ViewModels
 {
     using System.IO;
 
-    class ShellViewModel : NotificationObject, IShellViewModel
+    class ShellViewModel : BindableBase, IShellViewModel
     {
         private int selectedTabIndex;
         private DelegateCommand<ITabSourceItem> closeAllButThisCommand;
