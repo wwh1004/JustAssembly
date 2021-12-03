@@ -2,8 +2,8 @@ using System;
 using System.Windows;
 using JustAssembly.Infrastructure.CodeViewer;
 using JustAssembly.Interfaces;
-using JustAssembly.DiffAlgorithm;
-using JustAssembly.DiffAlgorithm.Models;
+using JustAssembly.Core.DiffAlgorithm;
+using JustAssembly.Core.DiffAlgorithm.Models;
 using JustAssembly.Nodes;
 
 namespace JustAssembly.ViewModels

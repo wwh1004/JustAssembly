@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JustAssembly.DiffAlgorithm.Algorithm
+namespace JustAssembly.Core.DiffAlgorithm.Algorithm
 {
     public interface IDiffAlgorithm
     {

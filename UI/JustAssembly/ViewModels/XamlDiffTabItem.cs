@@ -1,7 +1,7 @@
 using JustAssembly.Infrastructure.CodeViewer;
 using JustAssembly.Nodes;
-using JustAssembly.DiffAlgorithm;
-using JustAssembly.DiffAlgorithm.Models;
+using JustAssembly.Core.DiffAlgorithm;
+using JustAssembly.Core.DiffAlgorithm.Models;
 
 namespace JustAssembly.ViewModels
 {

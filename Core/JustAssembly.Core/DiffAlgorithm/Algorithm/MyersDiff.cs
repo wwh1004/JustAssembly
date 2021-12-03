@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace JustAssembly.DiffAlgorithm.Algorithm
+namespace JustAssembly.Core.DiffAlgorithm.Algorithm
 {
     /// <summary>
     /// This Class implements the Difference Algorithm published in

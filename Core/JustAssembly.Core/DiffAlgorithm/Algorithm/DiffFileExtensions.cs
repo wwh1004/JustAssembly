@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using JustAssembly.DiffAlgorithm.Models;
+using JustAssembly.Core.DiffAlgorithm.Models;
 
-namespace JustAssembly.DiffAlgorithm.Algorithm
+namespace JustAssembly.Core.DiffAlgorithm.Algorithm
 {
     internal static class DiffFileExtentions
     {

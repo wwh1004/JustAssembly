@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JustAssembly.DiffAlgorithm.Algorithm
+namespace JustAssembly.Core.DiffAlgorithm.Algorithm
 {
     public struct DiffItem
     {

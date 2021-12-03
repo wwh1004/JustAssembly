@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using JustAssembly.DiffAlgorithm.Models;
+using JustAssembly.Core.DiffAlgorithm.Models;
 
 namespace JustAssembly.Infrastructure.CodeViewer
 {

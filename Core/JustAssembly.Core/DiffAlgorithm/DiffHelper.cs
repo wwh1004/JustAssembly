@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JustAssembly.DiffAlgorithm.Algorithm;
-using JustAssembly.DiffAlgorithm.Models;
+using JustAssembly.Core.DiffAlgorithm.Algorithm;
+using JustAssembly.Core.DiffAlgorithm.Models;
 
-namespace JustAssembly.DiffAlgorithm
+namespace JustAssembly.Core.DiffAlgorithm
 {
     public static class DiffHelper
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JustAssembly.DiffAlgorithm.Models
+namespace JustAssembly.Core.DiffAlgorithm.Models
 {
     public class DiffFile
     {

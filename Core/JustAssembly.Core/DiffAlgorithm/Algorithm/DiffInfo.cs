@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JustAssembly.DiffAlgorithm.Algorithm
+namespace JustAssembly.Core.DiffAlgorithm.Algorithm
 {
     internal class DiffInfo
     {
