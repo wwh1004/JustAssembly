@@ -271,10 +271,6 @@
       <Project>{ed1be103-1699-4116-a732-616beb142eb2}</Project>
       <Name>JustDecompiler</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\JustDecompileEngine\EngineInfrastructure\JustDecompile.EngineInfrastructure.csproj">
-      <Project>{246289a4-53fd-4bb3-923a-08b1d3d905aa}</Project>
-      <Name>JustDecompile.EngineInfrastructure</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\JustDecompileEngine\JustDecompile.External.JustAssembly\JustDecompile.External.JustAssembly.csproj">
       <Project>{b97b9235-c5a9-4f00-aa22-d7e88fbbb4f0}</Project>
       <Name>JustDecompile.External.JustAssembly</Name>

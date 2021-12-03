@@ -9,8 +9,8 @@ using System.Windows.Threading;
 
 using ICSharpCode.TreeView;
 using Mono.Cecil;
-using JustDecompile.EngineInfrastructure;
-using JustDecompile.Tools.MSBuildProjectBuilder;
+//using JustDecompile.EngineInfrastructure;
+//using JustDecompile.Tools.MSBuildProjectBuilder;
 using JustDecompile.External.JustAssembly;
 
 using JustAssembly.Interfaces;
@@ -262,32 +262,33 @@ namespace JustAssembly.Nodes
 
         private bool ShouldDecompileDangerousResources(AssemblyDefinition assembly, string assemblyPath, AssemblyType assemblyType)
         {
-            try
-            {
-                Dictionary<ModuleDefinition, Mono.Collections.Generic.Collection<Resource>> assemblyResources = Utilities.GetResources(assembly);
+            return true;
+            //try
+            //{
+            //    Dictionary<ModuleDefinition, Mono.Collections.Generic.Collection<Resource>> assemblyResources = Utilities.GetResources(assembly);
 
-                bool containsDangerousResources = assemblyResources.SelectMany(rc => rc.Value)
-                                                                   .Any(resource => DangerousResourceIdentifier.IsDangerousResource(resource));
+            //    bool containsDangerousResources = assemblyResources.SelectMany(rc => rc.Value)
+            //                                                       .Any(resource => DangerousResourceIdentifier.IsDangerousResource(resource));
 
-                bool decompileDangerousResources = false;
-                if (containsDangerousResources)
-                {
-                    DispatcherObjectExt.Invoke(() =>
-                    {
-                        DangerousResourceDialog dialog = new DangerousResourceDialogWithAnalyticsTracking(Path.GetFileName(assemblyPath), assemblyType);
-                        if (dialog.Show() == DangerousResourceDialogResult.Yes)
-                        {
-                            decompileDangerousResources = true;
-                        }
-                    });
-                }
+            //    bool decompileDangerousResources = false;
+            //    if (containsDangerousResources)
+            //    {
+            //        DispatcherObjectExt.Invoke(() =>
+            //        {
+            //            DangerousResourceDialog dialog = new DangerousResourceDialogWithAnalyticsTracking(Path.GetFileName(assemblyPath), assemblyType);
+            //            if (dialog.Show() == DangerousResourceDialogResult.Yes)
+            //            {
+            //                decompileDangerousResources = true;
+            //            }
+            //        });
+            //    }
 
-                return decompileDangerousResources;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            //    return decompileDangerousResources;
+            //}
+            //catch (Exception)
+            //{
+            //    return false;
+            //}
         }
 
         private List<SharpTreeNode> GetMergedModules(bool shouldBeExpanded)
@@ -359,24 +360,6 @@ namespace JustAssembly.Nodes
             base.OnChildrenLoaded();
 
             this.areChildrenLoaded = true;
-        }
-
-        private void TrackFrameworkVersionAndAssemblyType(string filePath)
-        {
-            if (string.IsNullOrWhiteSpace(filePath))
-            {
-                return;
-            }
-
-            try
-            {
-                AssemblyDefinition assemblyDefinition = GlobalAssemblyResolver.Instance.GetAssemblyDefinition(filePath);
-                if (assemblyDefinition != null)
-                {
-                    AssemblyInfo assemblyInfo = NoCacheAssemblyInfoService.Instance.GetAssemblyInfo(assemblyDefinition, EmptyResolver.Instance);
-                }
-            }
-            catch (Exception) { }
         }
     }
 }
