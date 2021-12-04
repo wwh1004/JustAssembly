@@ -1,35 +1,27 @@
 using JustAssembly.Infrastructure.CodeViewer;
 using JustAssembly.Nodes;
-using JustAssembly.Core.DiffAlgorithm;
-using JustAssembly.Core.DiffAlgorithm.Models;
 
-namespace JustAssembly.ViewModels
-{
-    class XamlDiffTabItem : CodeDiffTabItemBase<XamlResourceNode>
-    {
-        public XamlDiffTabItem(XamlResourceNode xamlResourceNode)
-            : base(xamlResourceNode)
-        {
-        }
+namespace JustAssembly.ViewModels {
+	class XamlDiffTabItem : CodeDiffTabItemBase<XamlResourceNode> {
+		public XamlDiffTabItem(XamlResourceNode xamlResourceNode)
+			: base(xamlResourceNode) {
+		}
 
-        public override void LoadContent()
-        {
-            this.IsIndeterminate = true;
-            this.IsBusy = true;
+		public override void LoadContent() {
+			IsIndeterminate = true;
+			IsBusy = true;
 
-            this.header = instance.Name;
-            this.toolTip = instance.FullName;
+			header = instance.Name;
+			toolTip = instance.FullName;
 
-            if (!string.IsNullOrWhiteSpace(instance.OldSource))
-            {
-                this.LeftSourceCode = new DecompiledSourceCode(instance.OldSource);
-            }
-            if (!string.IsNullOrWhiteSpace(instance.NewSource))
-            {
-                this.RightSourceCode = new DecompiledSourceCode(instance.NewSource);
-            }
-            this.ApplyDiff();
-            this.IsBusy = false;
-        }
-    }
+			if (!string.IsNullOrWhiteSpace(instance.OldSource)) {
+				LeftSourceCode = new DecompiledSourceCode(instance.OldSource);
+			}
+			if (!string.IsNullOrWhiteSpace(instance.NewSource)) {
+				RightSourceCode = new DecompiledSourceCode(instance.NewSource);
+			}
+			ApplyDiff();
+			IsBusy = false;
+		}
+	}
 }

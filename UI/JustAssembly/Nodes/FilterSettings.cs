@@ -1,14 +1,9 @@
-﻿using System;
+namespace JustAssembly.Nodes {
+	public class FilterSettings {
+		public FilterSettings(bool showUnmodified) {
+			ShowUnmodified = showUnmodified;
+		}
 
-namespace JustAssembly.Nodes
-{
-    public class FilterSettings
-    {
-        public FilterSettings(bool showUnmodified)
-        {
-            this.ShowUnmodified = showUnmodified;
-        }
-
-        public bool ShowUnmodified { get; set; }
-    }
+		public bool ShowUnmodified { get; set; }
+	}
 }

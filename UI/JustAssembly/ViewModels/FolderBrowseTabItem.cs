@@ -1,49 +1,39 @@
 using System;
 using JustAssembly.Interfaces;
-using JustAssembly.Nodes.APIDiff;
 using JustAssembly.Nodes;
 
-namespace JustAssembly.ViewModels
-{
-    class FolderBrowseTabItem : BrowserTabSourceItemBase
-    {
-        public FolderBrowseTabItem(IOldToNewTupleMap<string> tupleMap)
-        {
-            FilterSettings filterSettings = new FilterSettings(this.ShowAllUnmodified);
-            this.nodes = new ItemNodeBase[] {
-                new FolderNode(tupleMap, null, null, this, filterSettings, true)
-            };
+namespace JustAssembly.ViewModels {
+	class FolderBrowseTabItem : BrowserTabSourceItemBase {
+		public FolderBrowseTabItem(IOldToNewTupleMap<string> tupleMap) {
+			FilterSettings filterSettings = new FilterSettings(ShowAllUnmodified);
+			nodes = new ItemNodeBase[] {
+				new FolderNode(tupleMap, null, null, this, filterSettings, true)
+			};
 
-            this.header = GetTabTitle(tupleMap);
-            this.toolTip = GetTabToolTip(tupleMap);
-        }
-
-        public override TabKind TabKind
-        {
-            get { return TabKind.DirectoryBrowse; }
-        }
-
-		public override void LoadContent()
-		{
+			header = GetTabTitle(tupleMap);
+			toolTip = GetTabToolTip(tupleMap);
 		}
 
-        public override void ReloadContent()
-        {
-            this.nodes[currentNode].ReloadChildren();
-        }
+		public override TabKind TabKind {
+			get { return TabKind.DirectoryBrowse; }
+		}
 
-        private void OnFolderNodeChildrenLoaded(object sender, EventArgs e)
-        {
-        }
+		public override void LoadContent() {
+		}
 
-        public override void Dispose()
-        {
-            this.CancelProgress();
-        }
+		public override void ReloadContent() {
+			nodes[currentNode].ReloadChildren();
+		}
 
-        public override void OnProjectFileGenerated(JustAssembly.Core.Decompilation.IFileGeneratedInfo args)
-        {
-            this.Progress = this.progress + 1;
-        }
-    }
+		private void OnFolderNodeChildrenLoaded(object sender, EventArgs e) {
+		}
+
+		public override void Dispose() {
+			CancelProgress();
+		}
+
+		public override void OnProjectFileGenerated(JustAssembly.Core.Decompilation.IFileGeneratedInfo args) {
+			Progress = progress + 1;
+		}
+	}
 }

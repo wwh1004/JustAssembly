@@ -1,52 +1,44 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Windows;
 using System.Windows.Threading;
 using JustAssembly.MergeUtilities;
 using JustAssembly.ViewModels;
 
-namespace JustAssembly
-{
-    public partial class App : Application
-    {
-        private string[] args;
+namespace JustAssembly {
+	public partial class App : Application {
+		private string[] args;
 
-        public App()
-        {
-            AssemblyHelper.ErrorReadingAssembly += OnErrorReadingAssembly;
-        }
-        
-        private void OnErrorReadingAssembly(object sender, ErrorAssemblyReadingEventArgs e)
-        {
-            if (e.NotSupportedAssemblyPaths.Count == 0)
-            {
-                return;
-            }
-            StringBuilder unsupportedFilesNames = new StringBuilder();
-            foreach (string assembly in e.NotSupportedAssemblyPaths)
-            {
-                unsupportedFilesNames.Append(assembly);
-                unsupportedFilesNames.Append(Environment.NewLine);
-            }
-            string errorCaption = "Not supported file(s):";
+		public App() {
+			AssemblyHelper.ErrorReadingAssembly += OnErrorReadingAssembly;
+		}
 
-            string errorMessage = unsupportedFilesNames.ToString();
+		private void OnErrorReadingAssembly(object sender, ErrorAssemblyReadingEventArgs e) {
+			if (e.NotSupportedAssemblyPaths.Count == 0) {
+				return;
+			}
+			StringBuilder unsupportedFilesNames = new StringBuilder();
+			foreach (string assembly in e.NotSupportedAssemblyPaths) {
+				unsupportedFilesNames.Append(assembly);
+				unsupportedFilesNames.Append(Environment.NewLine);
+			}
+			string errorCaption = "Not supported file(s):";
 
-            DispatcherObjectExt.BeginInvoke(() => ToolWindow.ShowDialog(new ErrorMessageWindow(errorMessage, errorCaption), width: 800, height: 500), DispatcherPriority.Background);
-        }
+			string errorMessage = unsupportedFilesNames.ToString();
 
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            args = e.Args;
-            base.OnStartup(e);
+			DispatcherObjectExt.BeginInvoke(() => ToolWindow.ShowDialog(new ErrorMessageWindow(errorMessage, errorCaption), width: 800, height: 500), DispatcherPriority.Background);
+		}
 
-            this.OnShellRun();
-        }
+		protected override void OnStartup(StartupEventArgs e) {
+			args = e.Args;
+			base.OnStartup(e);
 
-        private void OnShellRun()
-        {
-            Shell shell = new Shell(new ShellViewModel(args), args);
-            shell.Show();
-        }
-    }
+			OnShellRun();
+		}
+
+		private void OnShellRun() {
+			Shell shell = new Shell(new ShellViewModel(args), args);
+			shell.Show();
+		}
+	}
 }

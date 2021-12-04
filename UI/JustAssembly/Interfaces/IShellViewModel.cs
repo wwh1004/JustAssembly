@@ -1,12 +1,10 @@
-namespace JustAssembly.ViewModels
-{
-    public interface IShellViewModel
-    {
-        void CancelCurrentOperation();
+namespace JustAssembly.ViewModels {
+	public interface IShellViewModel {
+		void CancelCurrentOperation();
 
-        void OpenNewSessionCommandExecuted();
+		void OpenNewSessionCommandExecuted();
 
-        void OpenNewSessionWithCmdLineArgsCommandExecuted();
+		void OpenNewSessionWithCmdLineArgsCommandExecuted();
 
-    }
+	}
 }

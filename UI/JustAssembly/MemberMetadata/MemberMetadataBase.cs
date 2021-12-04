@@ -1,34 +1,26 @@
-﻿using System;
-using System.Linq;
+namespace JustAssembly {
+	public abstract class MemberMetadataBase {
+		private string name;
 
-namespace JustAssembly
-{
-    public abstract class MemberMetadataBase
-    {
-        private string name;
+		public MemberMetadataBase(string assemblyPath, uint tokenId) {
+			AssemblyPath = assemblyPath;
 
-        public MemberMetadataBase(string assemblyPath, uint tokenId)
-        {
-            this.AssemblyPath = assemblyPath;
+			TokenId = tokenId;
+		}
 
-            this.TokenId = tokenId;
-        }
+		public readonly uint TokenId;
 
-        public readonly uint TokenId;
+		public readonly string AssemblyPath;
 
-        public readonly string AssemblyPath;
+		public string GetName() {
+			if (string.IsNullOrWhiteSpace(name)) {
+				name = GetNameInternal();
+			}
+			return name;
+		}
 
-        public string GetName()
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                this.name = this.GetNameInternal();
-            }
-            return this.name;
-        }
+		protected abstract string GetNameInternal();
 
-        protected abstract string GetNameInternal();
-
-        public abstract bool IsPublic { get; }
-    }
+		public abstract bool IsPublic { get; }
+	}
 }

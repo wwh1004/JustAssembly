@@ -1,23 +1,19 @@
-using System;
-using System.Collections.Generic;
 using JustAssembly.Core.DiffAlgorithm.Models;
 
-namespace JustAssembly.Infrastructure.CodeViewer
-{
-    public interface ICodeViewerResults
-    {
-        Position GetMemberPosition();
+namespace JustAssembly.Infrastructure.CodeViewer {
+	public interface ICodeViewerResults {
+		Position GetMemberPosition();
 
-        bool HighlighMember { get; }
+		bool HighlighMember { get; }
 
-        string GetSourceCode();
+		string GetSourceCode();
 
-        void ApplyDiffInfo(DiffFile diffFile);
+		void ApplyDiffInfo(DiffFile diffFile);
 
-        ClassificationType GetLineDiffClassificationType(int lineNumber);
+		ClassificationType GetLineDiffClassificationType(int lineNumber);
 
-        int GetLinesCount();
+		int GetLinesCount();
 
-        string GetLineNumberString(int lineNumber);
-    }
+		string GetLineNumberString(int lineNumber);
+	}
 }

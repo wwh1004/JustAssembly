@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace JustAssembly.Core.Decompilation
-{
-	public interface ISpan
-	{
+namespace JustAssembly.Core.Decompilation {
+	public interface ISpan {
 		int Start { get; }
 		int Length { get; }
 	}

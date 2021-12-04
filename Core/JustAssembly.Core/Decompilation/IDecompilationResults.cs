@@ -1,13 +1,7 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Mono.Cecil;
 
-namespace JustAssembly.Core.Decompilation
-{
-	public interface IDecompilationResults
-	{
+namespace JustAssembly.Core.Decompilation {
+	public interface IDecompilationResults {
 		string FilePath { get; }
 		ICodeViewerResults CodeViewerResults { get; }
 		Dictionary<uint, IOffsetSpan> MemberDeclarationToCodePostionMap { get; }

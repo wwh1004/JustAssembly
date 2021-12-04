@@ -1,11 +1,9 @@
 using JustAssembly.Interfaces;
 
-namespace JustAssembly.Nodes
-{
-    interface IResourceNode
-    {
-        IOldToNewTupleMap<string> ResourceMap { get; }
+namespace JustAssembly.Nodes {
+	interface IResourceNode {
+		IOldToNewTupleMap<string> ResourceMap { get; }
 
-        DifferenceDecoration DifferenceDecoration { get; }
-    }
+		DifferenceDecoration DifferenceDecoration { get; }
+	}
 }

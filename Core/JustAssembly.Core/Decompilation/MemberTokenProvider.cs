@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace JustAssembly.Core.Decompilation
-{
-	class MemberTokenProvider : IMemberTokenProvider
-	{
-		public TokenProviderType TokenProviderType
-		{
-			get
-			{
+namespace JustAssembly.Core.Decompilation {
+	class MemberTokenProvider : IMemberTokenProvider {
+		public TokenProviderType TokenProviderType {
+			get {
 				return TokenProviderType.MemberTokenProvider;
 			}
 		}
@@ -19,10 +10,9 @@ namespace JustAssembly.Core.Decompilation
 
 		public uint MemberToken { get; private set; }
 
-		public MemberTokenProvider(uint declaringTypeToken, uint memberToken)
-		{
-			this.DeclaringTypeToken = declaringTypeToken;
-			this.MemberToken = memberToken;
+		public MemberTokenProvider(uint declaringTypeToken, uint memberToken) {
+			DeclaringTypeToken = declaringTypeToken;
+			MemberToken = memberToken;
 		}
 	}
 }

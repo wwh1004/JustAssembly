@@ -1,13 +1,9 @@
-﻿using System;
+namespace JustAssembly.Core {
+	public interface IDiffItem {
+		DiffType DiffType { get; }
 
-namespace JustAssembly.Core
-{
-    public interface IDiffItem
-    {
-        DiffType DiffType { get; }
+		string ToXml();
 
-        string ToXml();
-
-        bool IsBreakingChange { get; }
-    }
+		bool IsBreakingChange { get; }
+	}
 }

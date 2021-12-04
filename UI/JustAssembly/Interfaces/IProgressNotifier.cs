@@ -1,22 +1,20 @@
 using System.Threading;
 using JustAssembly.Core.Decompilation;
 
-namespace JustAssembly.Interfaces
-{
-    interface IProgressNotifier : IFileGenerationNotifier
-    {
-        bool IsBusy { get; set; }
+namespace JustAssembly.Interfaces {
+	interface IProgressNotifier : IFileGenerationNotifier {
+		bool IsBusy { get; set; }
 
-        bool IsIndeterminate { get; set; }
+		bool IsIndeterminate { get; set; }
 
-        string LoadingMessage { get; set; }
+		string LoadingMessage { get; set; }
 
-        int Progress { get; set; }
+		int Progress { get; set; }
 
-        void Completed();
+		void Completed();
 
-        void CancelProgress();
+		void CancelProgress();
 
-        CancellationToken GetCanellationToken();
-    }
+		CancellationToken GetCanellationToken();
+	}
 }

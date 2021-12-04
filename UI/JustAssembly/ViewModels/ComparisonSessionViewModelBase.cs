@@ -1,88 +1,70 @@
 using System.Windows.Input;
+using JustAssembly.Controls;
 using JustAssembly.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
-using JustAssembly.Controls;
 
-namespace JustAssembly.ViewModels
-{
-    abstract class ComparisonSessionViewModelBase : BindableBase, IOldToNewTupleMap<string>, IComparisonSessionModel
-    {
-        private string oldPath;
-        private string newPath;
+namespace JustAssembly.ViewModels {
+	abstract class ComparisonSessionViewModelBase : BindableBase, IOldToNewTupleMap<string>, IComparisonSessionModel {
+		private string oldPath;
+		private string newPath;
 
-        public ICommand SwapPathsCommand { get; private set; }
+		public ICommand SwapPathsCommand { get; private set; }
 
-        public ComparisonSessionViewModelBase(string header)
-        {
-            this.SwapPathsCommand = new DelegateCommand(OnSwapPathsCommandExecuted);
+		public ComparisonSessionViewModelBase(string header) {
+			SwapPathsCommand = new DelegateCommand(OnSwapPathsCommandExecuted);
 
-            this.Header = header;
-        }
+			Header = header;
+		}
 
-        public abstract SelectedItemType SelectedItemType { get; }
+		public abstract SelectedItemType SelectedItemType { get; }
 
-        public string Header { get; private set; }
+		public string Header { get; private set; }
 
-        public string OldType
-        {
-            get
-            {
-                return this.oldPath;
-            }
-            set
-            {
-                if (this.oldPath != value)
-                {
-                    this.oldPath = value;
+		public string OldType {
+			get => oldPath;
+			set {
+				if (oldPath != value) {
+					oldPath = value;
 
-                    this.RaisePropertyChanged("OldType");
+					RaisePropertyChanged("OldType");
 
-                    this.RaisePropertyChanged("IsLoadEnabled");
-                }
-            }
-        }
+					RaisePropertyChanged("IsLoadEnabled");
+				}
+			}
+		}
 
-        public string NewType
-        {
-            get
-            {
-                return this.newPath;
-            }
-            set
-            {
-                if (this.newPath != value)
-                {
-                    this.newPath = value;
+		public string NewType {
+			get => newPath;
+			set {
+				if (newPath != value) {
+					newPath = value;
 
-                    this.RaisePropertyChanged("NewType");
+					RaisePropertyChanged("NewType");
 
-                    this.RaisePropertyChanged("IsLoadEnabled");
-                }
-            }
-        }
+					RaisePropertyChanged("IsLoadEnabled");
+				}
+			}
+		}
 
-        public bool IsLoadEnabled
-        {
-            get { return GetLoadButtonState(); }
-        }
+		public bool IsLoadEnabled {
+			get { return GetLoadButtonState(); }
+		}
 
-        protected abstract bool GetLoadButtonState();
+		protected abstract bool GetLoadButtonState();
 
-        public abstract ITabSourceItem GetTabSourceItem();
+		public abstract ITabSourceItem GetTabSourceItem();
 
-        private void OnSwapPathsCommandExecuted()
-        {
-            string tempPath = this.OldType;
+		private void OnSwapPathsCommandExecuted() {
+			string tempPath = OldType;
 
-            this.OldType = this.NewType;
+			OldType = NewType;
 
-            this.NewType = tempPath;
-        }
+			NewType = tempPath;
+		}
 
-        public string GetFirstNotNullItem()
-        {
-            return OldType ?? NewType;
-        }
-    }
+		public string GetFirstNotNullItem() {
+			return OldType ?? NewType;
+		}
+	}
 }

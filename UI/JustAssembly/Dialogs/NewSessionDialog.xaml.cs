@@ -1,49 +1,40 @@
-﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
-namespace JustAssembly
-{
-    public partial class NewSessionDialog : Window
-    {
-        public NewSessionDialog()
-        {
-            InitializeComponent();
+namespace JustAssembly {
+	public partial class NewSessionDialog : Window {
+		public NewSessionDialog() {
+			InitializeComponent();
 
-            this.ShowInTaskbar = false;
+			ShowInTaskbar = false;
 
-            this.ResizeMode = ResizeMode.NoResize;
+			ResizeMode = ResizeMode.NoResize;
 
-            this.WindowStyle = WindowStyle.ToolWindow;
+			WindowStyle = WindowStyle.ToolWindow;
 
-            this.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
-            this.Owner = Application.Current.MainWindow;
+			Owner = Application.Current.MainWindow;
 
-            this.KeyDown += OnKeyDown;
-        }
+			KeyDown += OnKeyDown;
+		}
 
-        private void OnKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Escape)
-            {
-                this.DialogResult = false;
+		private void OnKeyDown(object sender, KeyEventArgs e) {
+			if (e.Key == Key.Escape) {
+				DialogResult = false;
 
-                this.Close();
-            }
-        }
+				Close();
+			}
+		}
 
-        public bool ShowModal()
-        {
-            return this.ShowDialog() == true;
-        }
+		public bool ShowModal() {
+			return ShowDialog() == true;
+		}
 
-        private void OnLoadClick(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
+		private void OnLoadClick(object sender, RoutedEventArgs e) {
+			DialogResult = true;
 
-            this.Close();
-        }
-    }
+			Close();
+		}
+	}
 }

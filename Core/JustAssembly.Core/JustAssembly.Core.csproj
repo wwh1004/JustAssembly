@@ -59,14 +59,11 @@
     </Compile>
     <Compile Include="Decompilation\AccessModifier.cs" />
     <Compile Include="Decompilation\AssemblyDecompilationResults.cs" />
-    <Compile Include="Decompilation\AvalonEditCodeFormatter.cs" />
     <Compile Include="Decompilation\CodeViewerResults.cs" />
     <Compile Include="Decompilation\DecompilationResults.cs" />
     <Compile Include="Decompilation\Decompiler.cs" />
     <Compile Include="Decompilation\EventMethod.cs" />
     <Compile Include="Decompilation\EventMethodType.cs" />
-    <Compile Include="Decompilation\FileGeneratedInfo.cs" />
-    <Compile Include="Decompilation\FileGenerationNotifier.cs" />
     <Compile Include="Decompilation\IAssemblyDecompilationResults.cs" />
     <Compile Include="Decompilation\ICodeViewerResults.cs" />
     <Compile Include="Decompilation\IDecompilationResults.cs" />
@@ -80,8 +77,6 @@
     <Compile Include="Decompilation\ISpan.cs" />
     <Compile Include="Decompilation\ITokenProvider.cs" />
     <Compile Include="Decompilation\ITypeTokenProvider.cs" />
-    <Compile Include="Decompilation\JustAssemblyFilePathsAnalyzer.cs" />
-    <Compile Include="Decompilation\JustAssemblyProjectBuilder.cs" />
     <Compile Include="Decompilation\MemberTokenProvider.cs" />
     <Compile Include="Decompilation\MemberType.cs" />
     <Compile Include="Decompilation\ModuleDecompilationResults.cs" />

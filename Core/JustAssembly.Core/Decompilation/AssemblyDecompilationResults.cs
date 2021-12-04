@@ -1,12 +1,7 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace JustAssembly.Core.Decompilation
-{
-	class AssemblyDecompilationResults : IAssemblyDecompilationResults
-	{
+namespace JustAssembly.Core.Decompilation {
+	class AssemblyDecompilationResults : IAssemblyDecompilationResults {
 		public string AssemblyFilePath { get; private set; }
 
 		public IDecompilationResults AssemblyAttributesDecompilationResults { get; private set; }
@@ -16,12 +11,11 @@ namespace JustAssembly.Core.Decompilation
 		public ICollection<string> ResourcesFilePaths { get; private set; }
 
 		public AssemblyDecompilationResults(string assemblyFilePath, IDecompilationResults assemblyAttributesDecompilationResults, ICollection<IModuleDecompilationResults> moduleDecompilationResults,
-			ICollection<string> resourcesFilepaths)
-		{
-			this.AssemblyFilePath = assemblyFilePath;
-			this.AssemblyAttributesDecompilationResults = assemblyAttributesDecompilationResults;
-			this.ModuleDecompilationResults = moduleDecompilationResults;
-			this.ResourcesFilePaths = resourcesFilepaths;
+			ICollection<string> resourcesFilepaths) {
+			AssemblyFilePath = assemblyFilePath;
+			AssemblyAttributesDecompilationResults = assemblyAttributesDecompilationResults;
+			ModuleDecompilationResults = moduleDecompilationResults;
+			ResourcesFilePaths = resourcesFilepaths;
 		}
 	}
 }

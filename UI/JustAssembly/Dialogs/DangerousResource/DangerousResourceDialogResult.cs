@@ -1,8 +1,6 @@
-﻿namespace JustAssembly.Dialogs.DangerousResource
-{
-    internal enum DangerousResourceDialogResult
-    {
-        Yes,
-        No
-    }
+namespace JustAssembly.Dialogs.DangerousResource {
+	internal enum DangerousResourceDialogResult {
+		Yes,
+		No
+	}
 }

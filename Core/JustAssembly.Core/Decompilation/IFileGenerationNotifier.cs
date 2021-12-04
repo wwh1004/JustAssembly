@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace JustAssembly.Core.Decompilation
-{
-	public interface IFileGenerationNotifier
-	{
+namespace JustAssembly.Core.Decompilation {
+	public interface IFileGenerationNotifier {
 		/// <summary>
 		/// Notifies that a file was created. Additional information about the type of the file is contained in the args.
 		/// </summary>
