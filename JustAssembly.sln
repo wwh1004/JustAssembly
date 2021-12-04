@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{F9550310-3D00-4134-9155-2C56F58EF1DB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly", "UI\JustAssembly\JustAssembly.csproj", "{0AE2BB33-482B-443F-82CF-8FC9AECF1A84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly", "JustAssembly\JustAssembly.csproj", "{0AE2BB33-482B-443F-82CF-8FC9AECF1A84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{84FE8525-5BA5-499A-A555-624168D7E447}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AC22ACE4-84E5-4A0C-AA56-46F35B6121E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly.Core", "JustAssembly.Core\JustAssembly.Core.csproj", "{C83612CD-AD42-4655-98A1-336CE7A65012}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly.Core", "Core\JustAssembly.Core\JustAssembly.Core.csproj", "{C83612CD-AD42-4655-98A1-336CE7A65012}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly.CommandLineTool", "UI\JustAssembly.CommandLineTool\JustAssembly.CommandLineTool.csproj", "{C6D6187D-CB83-40A1-A3F6-20FB9231D67B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly.CommandLineTool", "JustAssembly.CommandLineTool\JustAssembly.CommandLineTool.csproj", "{C6D6187D-CB83-40A1-A3F6-20FB9231D67B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustAssembly.Tests", "Tests\JustAssembly.Tests\JustAssembly.Tests.csproj", "{487D7589-FFD2-470A-9498-7CA1222EE57E}"
 EndProject
@@ -44,9 +40,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0AE2BB33-482B-443F-82CF-8FC9AECF1A84} = {F9550310-3D00-4134-9155-2C56F58EF1DB}
-		{C83612CD-AD42-4655-98A1-336CE7A65012} = {AC22ACE4-84E5-4A0C-AA56-46F35B6121E7}
-		{C6D6187D-CB83-40A1-A3F6-20FB9231D67B} = {F9550310-3D00-4134-9155-2C56F58EF1DB}
 		{487D7589-FFD2-470A-9498-7CA1222EE57E} = {84FE8525-5BA5-499A-A555-624168D7E447}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

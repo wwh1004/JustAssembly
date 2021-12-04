@@ -66,7 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\JustAssembly.Core\JustAssembly.Core.csproj">
+    <ProjectReference Include="..\..\JustAssembly.Core\JustAssembly.Core.csproj">
       <Project>{c83612cd-ad42-4655-98a1-336ce7a65012}</Project>
       <Name>JustAssembly.Core</Name>
     </ProjectReference>
